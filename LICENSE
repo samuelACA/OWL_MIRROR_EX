@@ -1,0 +1,7 @@
+Owlbear Token Mirror Extension
+
+This extension adds functionality to the Owlbear Rodeo virtual tabletop, allowing tokens to mirror movements in real time. The extension supports advanced configurations such as inverted movement and multiple tokens within a mirrored group, enhancing gameplay and simplifying group management for Game Masters.
+
+Please ensure that any modifications to the code preserve the original functionality of the extension. Contributions and improvements are welcome, but do not remove or disable the core features designed for token mirroring and synchronization.
+
+Thank you for using and improving this project!

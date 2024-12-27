@@ -1,0 +1,38 @@
+{
+    "name": "Owlbear Token Mirror",
+    "version": "1.0.0",
+    "description": "An Owlbear Rodeo extension for real-time token mirroring and movement synchronization with advanced configuration options.",
+    "author": "Samuel Almeida",
+    "homepage_url": "https://yourhomepage.com",
+    "icons": {
+      "16": "icons/mirror.svg",
+      "48": "icons/group.svg",
+      "128": "icons/break.svg"
+    },
+    "permissions": [],
+    "background": {
+      "scripts": ["scripts/index.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.owlbear.rodeo/*"],
+        "js": [
+          "scripts/movementLogic.js",
+          "scripts/sync.js",
+          "scripts/tokenManager.js",
+          "scripts/controls.js",
+          "scripts/effects.js",
+          "scripts/tokenMenu.js"
+        ],
+        "css": ["styles/style.css"]
+      }
+    ],
+    "web_accessible_resources": [
+      "icons/mirror.svg",
+      "icons/group.svg",
+      "icons/break.svg"
+    ],
+    "manifest_version": 2
+  }
+  
