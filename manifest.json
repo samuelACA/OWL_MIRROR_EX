@@ -1,38 +1,43 @@
 {
-    "name": "Owlbear Token Mirror",
-    "version": "1.0.0",
-    "description": "An Owlbear Rodeo extension for real-time token mirroring and movement synchronization with advanced configuration options.",
-    "author": "Samuel Almeida",
-    "homepage_url": "https://yourhomepage.com",
-    "icons": {
-      "16": "icons/mirror.svg",
-      "48": "icons/group.svg",
-      "128": "icons/break.svg"
+  "name": "Owlbear Token Mirror",
+  "description": "An extension for Owlbear Rodeo that enables real-time token mirroring and movement synchronization.",
+  "version": "1.0.0",
+  "manifest_version": 1,
+  "icons": {
+    "mirror": "icons/mirror.svg",
+    "group": "icons/group.svg",
+    "break": "icons/break.svg"
+  },
+  "entrypoints": {
+    "app": {
+      "src": "scripts/index.js"
     },
-    "permissions": [],
-    "background": {
-      "scripts": ["scripts/index.js"],
-      "persistent": false
+    "tokenManager": {
+      "src": "scripts/tokenManager.js"
     },
-    "content_scripts": [
-      {
-        "matches": ["https://*.owlbear.rodeo/*"],
-        "js": [
-          "scripts/movementLogic.js",
-          "scripts/sync.js",
-          "scripts/tokenManager.js",
-          "scripts/controls.js",
-          "scripts/effects.js",
-          "scripts/tokenMenu.js"
-        ],
-        "css": ["styles/style.css"]
-      }
-    ],
-    "web_accessible_resources": [
-      "icons/mirror.svg",
-      "icons/group.svg",
-      "icons/break.svg"
-    ],
-    "manifest_version": 2
-  }
-  
+    "movementLogic": {
+      "src": "scripts/movementLogic.js"
+    },
+    "sync": {
+      "src": "scripts/sync.js"
+    },
+    "effects": {
+      "src": "scripts/effects.js"
+    },
+    "tokenMenu": {
+      "src": "scripts/tokenMenu.js"
+    },
+    "controls": {
+      "src": "scripts/controls.js"
+    }
+  },
+  "web_accessible_resources": [
+    "icons/mirror.svg",
+    "icons/group.svg",
+    "icons/break.svg",
+    "styles/style.css"
+  ],
+  "permissions": [
+    "storage"
+  ]
+}
