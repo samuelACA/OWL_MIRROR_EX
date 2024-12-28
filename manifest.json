@@ -3,41 +3,21 @@
   "description": "An extension for Owlbear Rodeo that enables real-time token mirroring and movement synchronization.",
   "version": "1.0.0",
   "manifest_version": 1,
-  "icons": {
-    "mirror": "icons/mirror.svg",
-    "group": "icons/group.svg",
-    "break": "icons/break.svg"
-  },
   "entrypoints": {
     "app": {
       "src": "scripts/index.js"
-    },
-    "tokenManager": {
-      "src": "scripts/tokenManager.js"
-    },
-    "movementLogic": {
-      "src": "scripts/movementLogic.js"
-    },
-    "sync": {
-      "src": "scripts/sync.js"
-    },
-    "effects": {
-      "src": "scripts/effects.js"
-    },
-    "tokenMenu": {
-      "src": "scripts/tokenMenu.js"
-    },
-    "controls": {
-      "src": "scripts/controls.js"
     }
   },
   "web_accessible_resources": [
+    "scripts/movementLogic.js",
+    "scripts/sync.js",
+    "scripts/tokenManager.js",
+    "scripts/controls.js",
+    "scripts/effects.js",
+    "scripts/tokenMenu.js",
+    "styles/style.css",
     "icons/mirror.svg",
     "icons/group.svg",
-    "icons/break.svg",
-    "styles/style.css"
-  ],
-  "permissions": [
-    "storage"
+    "icons/break.svg"
   ]
 }
