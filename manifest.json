@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "manifest_version": 1,
   "author": "Samuel Almeida",
-  "homepage_url": "https://samuelaca.github.io/OWL_MIRROR_EX/",
+  "description": "Mirror tokens and synchronize movements in real-time.",
   "icon": "/icons/mirror.svg",
-  "background_url": "/src/background/background.html",
-  "description": "Mirror tokens and synchronize movements in real-time."
+  "background_url": "/src/background/background.html"
 }
