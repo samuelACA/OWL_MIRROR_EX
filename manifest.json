@@ -4,6 +4,6 @@
   "manifest_version": 1,
   "author": "Samuel Almeida",
   "description": "Mirror tokens and synchronize movements in real-time.",
-  "icon": "frontend/icons/mirror.svg",
+  "icon": "/frontend/icons/mirror.svg",
   "background_url": "frontend/index.html"
 }
