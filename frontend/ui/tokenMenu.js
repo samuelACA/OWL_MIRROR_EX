@@ -7,10 +7,21 @@ export function initializeTokenMenu() {
     document.addEventListener('click', (event) => {
         const tokenMenu = document.getElementById('token-menu');
 
-        // Exibe o menu se clicado (simulação para teste)
+        // Exibe o menu se clicado em um token (simulação para teste)
         if (event.target.classList.contains('token')) {
-            tokenMenu.style.display = 'block'; // Exibe o menu (assumindo que já existe no HTML/CSS)
+            const rect = event.target.getBoundingClientRect();
+            // Posiciona o menu próximo ao token
+            tokenMenu.style.left = `${rect.left}px`;
+            tokenMenu.style.top = `${rect.bottom}px`;
+            tokenMenu.style.display = 'block'; // Exibe o menu
+
             console.log("Token Menu: Exibindo opções...");
+        } else {
+            // Fecha o menu se clicar fora
+            const tokenMenu = document.getElementById('token-menu');
+            if (tokenMenu.style.display === 'block' && !tokenMenu.contains(event.target)) {
+                tokenMenu.style.display = 'none';
+            }
         }
     });
 
@@ -31,6 +42,12 @@ function addGroupOption() {
 
         // Adiciona o botão ao menu
         tokenMenu.appendChild(groupButton);
+
+        // Lógica para o clique do botão "Criar Grupo"
+        groupButton.addEventListener('click', () => {
+            console.log("Grupo criado!");
+            // Aqui você pode adicionar a lógica de criação do grupo, dependendo da sua aplicação
+        });
 
         console.log("Token Menu: Opção 'Criar Grupo' adicionada.");
     } else {
