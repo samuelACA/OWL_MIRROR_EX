@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Owlbear Rodeo Token Mirror Extension">
-    <meta name="author" content="Samuel Almeida">
+    <meta name="author" content="SamuelACA">
     <meta name="version" content="1.0.0">
     <title>Owlbear Token Mirror</title>
-    <!-- Caminho atualizado para o stylesheet -->
     <link rel="stylesheet" href="/frontend/styles.css">
 </head>
 <body>
-    <!-- Contêiner Principal -->
     <div id="extension-root">
-        <!-- UI para debugging ou configurações -->
         <div id="controls-container">
             <h1>Owlbear Token Mirror Extension</h1>
             <p>Essa extensão adiciona a funcionalidade de espelhamento de tokens no Owlbear Rodeo.</p>
@@ -21,7 +18,12 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Menu de Tokens - Adicionado -->
+    <div id="token-menu" style="display: none; position: absolute; background: #fff; border: 1px solid #ccc; padding: 10px;">
+        <p>Menu de Tokens</p>
+        <!-- O botão "Criar Grupo" será inserido aqui via script -->
+    </div>
+
     <script src="backend/index.js" type="module"></script>
     <script src="backend/movementLogic.js" type="module"></script>
     <script src="backend/sync.js" type="module"></script>
@@ -29,8 +31,6 @@
     <script src="frontend/ui/controls.js" type="module"></script>
     <script src="frontend/ui/effects.js" type="module"></script>
     <script src="frontend/ui/tokenMenu.js" type="module"></script>
-
-    <!-- Ponto de entrada principal -->
     <script src="frontend/script.js" type="module"></script>
 </body>
 </html>
