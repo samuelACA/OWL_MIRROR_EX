@@ -1,10 +1,10 @@
 // script.js - Entry point for the Owlbear Token Mirror extension
-import { initializeSync } from './scripts/sync.js';
-import { initializeMovementLogic } from './scripts/movementLogic.js';
-import { initializeTokenManager } from './scripts/tokenManager.js';
-import { initializeTokenMenu } from './scripts/tokenMenu.js';
-import { initializeControls } from './scripts/controls.js';
-import { initializeEffects } from './scripts/effects.js';
+import { initializeSync } from '../backend/sync.js';
+import { initializeMovementLogic } from '../backend/movementLogic.js';
+import { initializeTokenManager } from '../backend/tokenManager.js';
+import { initializeTokenMenu } from './ui/tokenMenu.js';
+import { initializeControls } from './ui/controls.js';
+import { initializeEffects } from './ui/effects.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Owlbear Token Mirror Extension: Initializing...');
