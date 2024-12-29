@@ -1,9 +1,21 @@
 {
+  "manifest_version": 2,
   "name": "Owlbear Token Mirror",
   "version": "1.0.0",
-  "manifest_version": 1,
   "author": "Samuel Almeida",
   "description": "Mirror tokens and synchronize movements in real-time.",
-  "icon": "/frontend/icons/mirror.svg",
-  "background_url": "/frontend/index.html"
+  "icons": {
+    "128": "frontend/icons/mirror.svg"
+  },
+  "background": {
+    "scripts": ["frontend/script.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.owlbear.rodeo/*"],
+      "js": ["frontend/ui/controls.js"],
+      "css": ["frontend/styles.css"]
+    }
+  ]
 }
