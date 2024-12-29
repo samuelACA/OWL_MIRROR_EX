@@ -1,35 +1,48 @@
-// script.js - Entry point for the Owlbear Token Mirror extension
-import { initializeSync } from '../backend/sync.js';
-import { initializeMovementLogic } from '../backend/movementLogic.js';
-import { initializeTokenManager } from '../backend/tokenManager.js';
-import { initializeTokenMenu } from './ui/tokenMenu.js';
-import { initializeControls } from './ui/controls.js';
-import { initializeEffects } from './ui/effects.js';
+// Aguarda até que a cena esteja disponível
+async function waitForScene() {
+    while (!window?.owlbear?.scene) {
+        console.warn('Cena ainda não carregada. Aguardando...');
+        await new Promise((resolve) => setTimeout(resolve, 100)); // Espera 100ms antes de tentar novamente
+    }
+    console.log('Cena carregada:', window.owlbear.scene);
+    return window.owlbear.scene;
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Owlbear Token Mirror Extension: Initializing...');
+// Função principal de inicialização
+async function initializeExtension() {
+    console.log('Owlbear Token Mirror Extension: Inicializando...');
 
     try {
-        // Inicializa o Token Manager
-        initializeTokenManager();
+        // Aguarda a cena do Owlbear estar disponível
+        const scene = await waitForScene();
 
-        // Inicializa a lógica de movimento
-        initializeMovementLogic();
+        console.log('Cena disponível:', scene);
 
-        // Inicializa o menu de tokens
-        initializeTokenMenu();
+        // Passo 1: Inicializar gerenciador de tokens
+        initializeTokenManager(scene);
 
-        // Inicializa os controles da interface
-        initializeControls();
+        // Passo 2: Inicializar lógica de movimento
+        initializeMovementLogic(scene);
 
-        // Inicializa os efeitos visuais
-        initializeEffects();
+        // Passo 3: Inicializar menu de tokens
+        initializeTokenMenu(scene);
 
-        // Inicializa a sincronização de múltiplos usuários
-        initializeSync();
+        // Passo 4: Inicializar controles (UI)
+        initializeControls(scene);
 
-        console.log('Owlbear Token Mirror Extension: Initialization complete.');
+        // Passo 5: Inicializar efeitos visuais
+        initializeEffects(scene);
+
+        // Passo 6: Inicializar sincronização
+        initializeSync(scene);
+
+        console.log('Owlbear Token Mirror Extension: Inicialização completa.');
     } catch (error) {
-        console.error('Erro durante a inicialização:', error);
+        console.error('Erro durante a inicialização da extensão:', error);
     }
+}
+
+// Executa quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', () => {
+    initializeExtension();
 });
