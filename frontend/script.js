@@ -9,23 +9,27 @@ import { initializeEffects } from './scripts/effects.js';
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Owlbear Token Mirror Extension: Initializing...');
 
-    // Step 1: Initialize Token Manager
-    initializeTokenManager();
+    try {
+        // Inicializa o Token Manager
+        initializeTokenManager();
 
-    // Step 2: Initialize Movement Logic
-    initializeMovementLogic();
+        // Inicializa a lógica de movimento
+        initializeMovementLogic();
 
-    // Step 3: Initialize Token Menu (for UI interaction)
-    initializeTokenMenu();
+        // Inicializa o menu de tokens
+        initializeTokenMenu();
 
-    // Step 4: Initialize Controls (UI buttons and interactions)
-    initializeControls();
+        // Inicializa os controles da interface
+        initializeControls();
 
-    // Step 5: Initialize Effects (visual highlights and animations)
-    initializeEffects();
+        // Inicializa os efeitos visuais
+        initializeEffects();
 
-    // Step 6: Initialize Sync (multi-user synchronization)
-    initializeSync();
+        // Inicializa a sincronização de múltiplos usuários
+        initializeSync();
 
-    console.log('Owlbear Token Mirror Extension: Initialization complete.');
+        console.log('Owlbear Token Mirror Extension: Initialization complete.');
+    } catch (error) {
+        console.error('Erro durante a inicialização:', error);
+    }
 });
