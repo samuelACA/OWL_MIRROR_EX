@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 1,
   "name": "Owlbear Token Mirror",
   "version": "1.0.0",
   "author": "Samuel Almeida",
